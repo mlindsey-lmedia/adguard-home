@@ -20,6 +20,16 @@ services:
     networks:
       - adguard-net
 
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=<YOUR_TUNNEL_TOKEN>
+    networks:
+      - adguard-net
+
 networks:
   adguard-net:
     external: true
