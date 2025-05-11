@@ -24,9 +24,7 @@ services:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
     restart: unless-stopped
-    command: tunnel run
-    environment:
-      - TUNNEL_TOKEN=<YOUR_TUNNEL_TOKEN>
+    command: tunnel --no-autoupdate run --token eyJhIjoiYTY0ZmU2OTZkYzZkYTY3Y2IxYjgyN2EzZmMxOTVjMzgiLCJ0IjoiMDE1NWI1ZWYtMzhiNy00YmRiLTg5YWUtOGE3ZmQ1NzhkYjJmIiwicyI6Ik5UWXdOak5qTUdRdE9EQXlZaTAwTTJGa0xUazVabUV0WXpjMFlUa3hZVFU0WldOaCJ9
     networks:
       - adguard-net
 
